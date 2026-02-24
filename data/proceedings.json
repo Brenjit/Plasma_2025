@@ -1,0 +1,711 @@
+{
+  "types": [
+    "Inaugural",
+    "Invited Talk",
+    "Keynote",
+    "Lunch",
+    "Oral",
+    "Panel",
+    "Poster",
+    "Sponsor",
+    "Tea Break"
+  ],
+  "days": [
+    {
+      "id": "day1",
+      "date": "Dec 27, 2025",
+      "title": "Day 1 - Saturday",
+      "slots": [
+        {
+          "time": "08:00 AM",
+          "endTime": "09:00 AM",
+          "type": "common",
+          "title": "Registration"
+        },
+        {
+          "time": "09:00 AM",
+          "endTime": "11:00 AM",
+          "type": "common",
+          "title": "Inauguration"
+        },
+        {
+          "time": "11:00 AM",
+          "endTime": "11:20 AM",
+          "type": "break",
+          "title": "High-Tea Break"
+        },
+        {
+          "time": "11:20 AM",
+          "endTime": "01:00 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 2A: Next-Generation Tokamak Systems",
+              "chair": "Prof. S K Dutta, Outstanding Scientist, Director, MTRDC, DRDO",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Avinash Khare, Vice Chancellor, Sikkim University",
+                  "title": "A new type of divertor for tokamak",
+                  "duration": "30 Mins",
+                  "video": "https://www.youtube.com/watch?v=tfS_KmBp4wY",
+                  "slides": "https://drive.google.com/file/d/10Ms0YIf_A4XS3N9RX0yGWV9hEaVlv4LO/view?usp=sharing"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Joydeep Ghosh, IPR Gandhinagar",
+                  "title": "Nuclear Fusion: From dream to reality!",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Kishore Mishra",
+                  "title": "First Plasma Commissioning and Operational Highlights from India's First Spherical Tokamak at IPR",
+                  "code": "FST 1",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Maya Padivattath",
+                  "title": "Comparison of System Codes for Fusion Power Plant Design: SARAS and PROCESS",
+                  "code": "FST 2",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 2B: Plasma for Sustainable Technology",
+              "chair": "Prof. Ram Prakash, IIT Jodhpur",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Peter Bruggeman, University of Minnesota, USA",
+                  "title": "Nonthermal Plasma Applications",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Shihabudheen M. Maliyekkal, IIT Tirupati",
+                  "title": "Hybrid Plasma Technologies for Advanced Wastewater Treatment",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "P S Naga Sai Srikar",
+                  "title": "Characterization and application of atmospheric pressure plasmas by integrating the optical spectroscopy measurements...",
+                  "code": "PTA 1",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Tejashwi Rana",
+                  "title": "Optimization of CO2 Thermal Arc Plasmas Using Graphite Electrodes",
+                  "code": "PTA 2",
+                  "duration": "15 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "01:05 PM",
+          "endTime": "02:00 PM",
+          "type": "break",
+          "title": "Lunch Break"
+        },
+        {
+          "time": "02:00 PM",
+          "endTime": "03:50 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 3A: Laser & Fusion Plasma",
+              "chair": "Prof. Punit Kumar, Lucknow University",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Amita Das",
+                  "title": "Novel regime of Laser Plasma Interaction (Laser Fusion Plasma)",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Mainak Bandyopadhyay, IPR Gandhinagar",
+                  "title": "Negative Ion Source Plasma and Its Extracted Beam",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Prachi Jain",
+                  "title": "Development of the TRADE System Code for Tokamak Reactor Design",
+                  "code": "FST 3",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Geetha D",
+                  "title": "Investigation of low energy electron collision with BH3",
+                  "code": "FST 4",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Vishwa Bandhu Pathak",
+                  "title": "Laser wakefield acceleration studies for high-energy density light-particle collisions",
+                  "code": "TMS 1",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 3B: Fundamentals of Plasmas",
+              "chair": "Prof. Arun Tangirala",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. M. V. Kartikeyan, Director, IIITDM Kanchipuram",
+                  "title": "Gyrotrons for Plasma Heating and Other Applications",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Sudeep Bhattacharjee, IIT Kanpur",
+                  "title": "Thermodynamics of plasmas confined by a dipole magnet",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Anuravi Sharma",
+                  "title": "Magnetic field control of dc self bias and plasma parameters in capacitively coupled rf discharges",
+                  "code": "FPD 1",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Prakash Sarika Shrivastav",
+                  "title": "Stimulated Raman Side Scattering in Expanding Plasma with Thermal Effect",
+                  "code": "FPD 2",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Deepak Rajputohit",
+                  "title": "Study of spatial structure and conversion efficiency of higher harmonics in whistler mode excitation",
+                  "code": "FPD 3",
+                  "duration": "15 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "03:50 PM",
+          "endTime": "05:15 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 4A: AMP data, Modelling and Simulation",
+              "chair": "Prof. P C Deshmukh, IIT Tirupati",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. B.K. Sahoo, PRL Ahmedabad",
+                  "title": "What is in the choice of a many-body method",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Animesh Kuley, IISc Bengaluru",
+                  "title": "Global Gyrokinetic simulation of fusion Plasmas",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Santanu Karmakar, MTRDC Bengaluru",
+                  "title": "Gyrotron and its applications for plasma heating",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Shanila M",
+                  "title": "Machine Learning Enhanced Optical Diagnostics of Atmospheric Pressure Non-Thermal Air Plasmas",
+                  "code": "TMS 2",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Sripan Mondal",
+                  "title": "Numerical Simulation of Oscillatory Reconnection Controlled by Alternating Current-driven Waves",
+                  "code": "TMS 3",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Mohammad Yasir",
+                  "title": "Discussions on Electron Heating and Energy Absorption in Plasmas via Vortex Beams",
+                  "code": "TMS 4",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 4B: Plasma Dynamics and Applications",
+              "chair": "Prof. Rajesh Srivastava, IIT Roorkee",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Sushil Kumar Singh, Czech Tec. University",
+                  "title": "Experimental Study of Laser-Plasma Interaction Using Sub-nanosecond Kilo-Joule Class Laser",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Apeksha Madhukar, IIT Goa",
+                  "title": "Flexible surface Dielectric Barrier Discharge for Next-gen plasma application",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Ahmad Hamdan, Université de Montréal",
+                  "title": "Dynamics of nanosecond pulsed discharges close to a liquid surface",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Renu Bahl",
+                  "title": "Role of Convergent–Divergent Magnetic Nozzle Profiles in Enhancing Plasma Flow Acceleration",
+                  "code": "PTA 3",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Satish Babu Thota",
+                  "title": "Diagnostics of Ar Atmospheric Pressure Plasma Jet using Time-resolved Optical Emission Spectroscopy",
+                  "code": "FPD 4",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Suryasunil Rath",
+                  "title": "Machine Learning with Interpretability for Predicting Plasma Parameters in Microwave Atmospheric Plasmas",
+                  "code": "FPD 5",
+                  "duration": "15 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "05:15 PM",
+          "endTime": "07:35 PM",
+          "type": "common",
+          "title": "Poster Session-1",
+          "subtitle": "Fundamental Plasma & Diagnostics (74) + Astrophysical & Space Plasmas (35) + Theoritical Modelling (10)"
+        },
+        {
+          "time": "07:35 PM",
+          "endTime": "09:00 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 5A: High-Temperature and Fusion-Relevant Plasmas",
+              "chair": "Dr. Raj Singh, IPR, Gandhinagar",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Srikumar Ghorui, BARC, Mumbai",
+                  "title": "A Unique Non-Divergent Plasma Beam for Plasma Material Interaction",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. J. Padma Nilaya, BARC, Mumbai",
+                  "title": "Plasma Research at BARC: Present and Future",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Vajitha G",
+                  "title": "Unveiling Plasma-Assisted Activation of Biomass-Derived Carbons",
+                  "code": "CDT 1",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Nani Medicherla",
+                  "title": "Design of Ka band Metamaterial Abasorber for Defence Applications",
+                  "code": "CDT 2",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 5B: Plasma for Space Science & Technology",
+              "chair": "Prof. Ramesh Narayanan, IIT Delhi",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Mr. K. M. Shanbhogue, ISRO",
+                  "title": "Plasma Thrusters for Space Science and Technology Applications",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Umesh Kadhane, IIST Thiruvananthapuram",
+                  "title": "Plasma-induced processes in the evolution of organics in space",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Manthan Verma",
+                  "title": "Scaling and Intermittency In Magnetohydrodynamics Turbulence",
+                  "code": "ASP 1",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Ravinder Bhambhu",
+                  "title": "Radiation Pressure driven Rayleigh- Taylor Instability",
+                  "code": "ASP 2",
+                  "duration": "15 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "09:00 PM",
+          "endTime": "10:00 PM",
+          "type": "common",
+          "title": "Dinner"
+        }
+      ]
+    },
+    {
+      "id": "day2",
+      "date": "Dec 28, 2025",
+      "title": "Day 2 - Sunday",
+      "slots": [
+        {
+          "time": "09:00 AM",
+          "endTime": "11:20 AM",
+          "type": "common",
+          "title": "Session 1: Sponsor Presentations",
+          "chair": "Prof. A K Das",
+          "talks": [
+            {
+              "speaker": "Ozone Crop Innovate Private Limited",
+              "title": "Sponsor Talk",
+              "duration": "20 Mins",
+              "type": "Sponsor"
+            },
+            {
+              "speaker": "ATOS Instruments Marketing Services",
+              "title": "Sponsor Talk",
+              "duration": "20 Mins",
+              "type": "Sponsor"
+            },
+            {
+              "speaker": "SIMCO Global Technology & System Ltd.",
+              "title": "Sponsor Talk",
+              "duration": "10 Mins",
+              "type": "Sponsor"
+            },
+            {
+              "speaker": "Brukar Optics",
+              "title": "Sponsor Talk",
+              "duration": "10 Mins",
+              "type": "Sponsor"
+            }
+          ]
+        },
+        {
+          "time": "11:20 AM",
+          "endTime": "01:00 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 6A: Exotic & Dusty Plasma",
+              "chair": "Prof. Swatantra Pratap Singh, IIT Bombay",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Prashant K Singh, TIFR Hyderabad",
+                  "title": "Compact, femtosecond laser driven plasma accelerator",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Surabhi Jaiswal, IISER Pune",
+                  "title": "Revisiting plasma crystal and structural transition phenomena",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Sanat Tiwari, IIT Jammu",
+                  "title": "Dusty plasma turbulence in DC discharge plasma",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Sanjay Kumar",
+                  "title": "Magnetic Reconnection at Hyperbolic Flux Tube associated with a Confined Flare",
+                  "code": "ASP 4",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Atherv Saxena",
+                  "title": "Electron Acoustic Shock And Solitary Waves In Spin Polarized Dense Rotating Quantum Plasma",
+                  "code": "ASP 5",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 6B: Quantum computing & AI/ML in Plasma",
+              "chair": "Prof. S Aravinda, IIT Tirupati",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Srinivasa Prasannaa V, TCG CREST-CQuERE",
+                  "title": "Quantum algorithms and computation",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. P. K. Karmakar, Tezpur University",
+                  "title": "Normal acoustic modes in degenerate quantum plasmas",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Jan Trieschmann, Kiel University",
+                  "title": "Data-Integrated Physical Simulation and Machine Learning Analysis",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Dipanjana Hazra Nayak",
+                  "title": "Numerical Study of Self-focusing and Guiding of q-Gaussian Short Laser Pulse",
+                  "code": "PTA 4",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Sankaran K. J",
+                  "title": "Microplasma Illumination Characteristics of Electrically Conducting Nitrogen-Ion Implanted Diamond",
+                  "code": "PTA 5",
+                  "duration": "15 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "01:00 PM",
+          "endTime": "02:00 PM",
+          "type": "break",
+          "title": "Lunch Break"
+        },
+        {
+          "time": "02:00 PM",
+          "endTime": "03:50 PM",
+          "type": "common",
+          "title": "Poster Session-II",
+          "subtitle": "Fusion Science & Technology (82) + Cross-Disciplinary Topics (24) + Theory (10)"
+        },
+        {
+          "time": "04:05 PM",
+          "endTime": "05:20 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 7A: Astrophysical Plasmas",
+              "chair": "Prof. D N Gupta, University of Delhi",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Ram Prasad Prajapati, JNU",
+                  "title": "Kinetic and Fluid Descriptions of Jeans Instability",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Nishant K. Singh, IUCAA",
+                  "title": "Solar magnetic fields and their effects on the surface gravity mode",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Kirit Makwana, IIT Hyderabad",
+                  "title": "Wave modes and intermittency in plasma turbulence of the solar wind",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Swarniv Chandra",
+                  "title": "Solar Storms and Their Impact on Space Weather Systems",
+                  "code": "ASP 6",
+                  "duration": "15 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 7B: Emerging Technologies of Plasma",
+              "chair": "Prof. Pramod Gopinath, CUSAT",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Lakshminarayana Rao, IISc Bengaluru",
+                  "title": "Plasma activated water and it’s application in medicine and agriculture",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Shashi Ranjan, Faraday Earth Pvt. Ltd",
+                  "title": "RGA Reactor for Nitrogen fixation",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Venu Anand, NIT Calicut",
+                  "title": "Cold Atmospheric Plasma- Generation to Applications",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Pushparaj Gandhi Tadavarthi",
+                  "title": "Sustainable Cold Plasma Systems for Aflatoxin B1 Degradation",
+                  "code": "PTA 6",
+                  "duration": "15 Mins"
+                },
+                {
+                  "type": "Oral",
+                  "speaker": "Ram Prakash Lamba",
+                  "title": "Design and Simulation of a Cold Cathode Pseudospark Switch",
+                  "code": "PTA 7",
+                  "duration": "18 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "05:20 PM",
+          "endTime": "07:00 PM",
+          "title": "Buti Award Presentation Session",
+          "type": "common"
+        },
+        {
+          "time": "07:00 PM",
+          "endTime": "09:00 PM",
+          "title": "Cultural Event & Gala Dinner",
+          "type": "common"
+        }
+      ]
+    },
+    {
+      "id": "day3",
+      "date": "Dec 29, 2025",
+      "title": "Day 3 - Monday",
+      "slots": [
+        {
+          "time": "09:00 AM",
+          "endTime": "11:00 AM",
+          "type": "common",
+          "title": "Poster Session-III",
+          "subtitle": "Plasma Technology & Applications (82) + Theoretical Modelling (36)"
+        },
+        {
+          "time": "11:00 AM",
+          "endTime": "01:05 PM",
+          "type": "session",
+          "sessions": [
+            {
+              "name": "Session 8A: Multi-disciplinary Topics",
+              "chair": "Prof. Abhishek Jha, IIT Tirupati",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Nishant Sirse, IPS Academy",
+                  "title": "Tailoring and controlling plasma properties in RF capacitive discharges",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. Subrahmanyam, IIT Hyderabad",
+                  "title": "Plasma Catalysis for CO2 Conversion",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Vishant Gahlaut, Banasthali University",
+                  "title": "Critical Aspects on Thermal Management of TWTs for Space Applications",
+                  "duration": "30 Mins"
+                }
+              ]
+            },
+            {
+              "name": "Session 8B: Cold Plasma Applications",
+              "chair": "Prof. Thangavel Kanagasekaran, IISER Tirupati",
+              "talks": [
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Trivikram Nallamilli, IIT Tirupati",
+                  "title": "Role of cold plasma in improvement of techno functional properties of plant proteins",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. P. Murali Krishna, NIFTEM Kundli",
+                  "title": "Cold Plasma for food application",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Dr. Rajib Kar, BARC, Mumbai",
+                  "title": "Cold Plasma for Solid Radioactive Waste Treatment",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Invited Talk",
+                  "speaker": "Prof. K Ramchandran, Bhartiyar University",
+                  "title": "Thermal Plasma Simulations",
+                  "duration": "30 Mins"
+                },
+                {
+                  "type": "Sponsor",
+                  "speaker": "SS Deepam Biotek Pvt. Ltd.",
+                  "title": "Sponsor Slot",
+                  "duration": "10 Mins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "time": "01:05 PM",
+          "endTime": "02:00 PM",
+          "type": "break",
+          "title": "Lunch Break"
+        },
+        {
+          "time": "02:00 PM",
+          "endTime": "03:00 PM",
+          "type": "common",
+          "title": "Session 9: Awards",
+          "subtitle": "Jaidutt Saraswati Sodha PSSI Plasma Award Talk, Parvez Guzdar Award Talk",
+          "chair": "Prof. Arun Sarma, Director-General, Nectar"
+        },
+        {
+          "time": "03:00 PM",
+          "endTime": "04:00 PM",
+          "type": "common",
+          "title": "Conference Closure",
+          "subtitle": "Panel Discussion, PSSI GBM, Award distribution"
+        }
+      ]
+    }
+  ]
+}

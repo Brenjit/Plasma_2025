@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "Prof. D. Kartikeyan",
+        "role": "Chief Guest",
+        "affiliation": "Distinguished Scientist",
+        "image": "/speakers/kartikeyan.png"
+    },
+    {
+        "id": "2",
+        "name": "Dr. Umesh Kadhane",
+        "role": "Keynote Speaker",
+        "affiliation": "IIST Thiruvananthapuram",
+        "image": "/speakers/umesh-kadhane.png"
+    },
+    {
+        "id": "3",
+        "name": "Prof. S. Pradhan",
+        "role": "Plenary Speaker",
+        "affiliation": "IPR Gandhinagar",
+        "image": "https://via.placeholder.com/400x500?text=Prof.+Pradhan"
+    },
+    {
+        "id": "4",
+        "name": "Dr. R. Mukherjee",
+        "role": "Invited Speaker",
+        "affiliation": "PSSI President",
+        "image": "https://via.placeholder.com/400x500?text=Dr.+Mukherjee"
+    }
+]

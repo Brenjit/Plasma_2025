@@ -1,0 +1,23 @@
+{
+  "name": "Plasma National Conference 2025",
+  "shortName": "PNC 2025",
+  "description": "Official archive of the Plasma National Conference held at IIT Tirupati. Exploring the frontiers of Plasma Science, Fusion Technology, and Space Physics.",
+  "year": "2025",
+  "venue": "IIT Tirupati",
+  "dates": "December 27-29, 2025",
+  "links": {
+    "home": "/",
+    "proceedings": "/proceedings",
+    "gallery": "/gallery",
+    "contact": "#contact"
+  },
+  "contact": {
+    "email": "contact@iittp.ac.in",
+    "phone": "+91 877 250 3000",
+    "address": "IIT Tirupati Campus, Yerpedu, Andhra Pradesh, India - 517619"
+  },
+  "socials": {
+    "twitter": "#",
+    "linkedin": "#"
+  }
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-noto-sans), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+
+  --color-primary: #8a211d;
+  --color-primary-dark: #6e1a17;
+  --color-secondary: #D4AF37;
+  --color-background-light: #ffffff;
+
+  --color-text-main: #111318;
+  --color-text-secondary: #616f89;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background-light);
+  color: var(--color-text-main);
+}
+
+/* Material Symbols Utility */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}

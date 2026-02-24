@@ -1,0 +1,106 @@
+[
+    {
+        "id": "1",
+        "title": "Instabilities in Tokamak Edge Plasmas: A Comprehensive Review",
+        "speakerName": "Dr. Aditi Sharma",
+        "speakerId": "101",
+        "affiliation": "IPR Gandhinagar",
+        "session": "Technical Session 1",
+        "date": "2023-12-12",
+        "time": "10:30 AM",
+        "type": "Invited",
+        "tags": [
+            "Tokamaks",
+            "Instabilities",
+            "Edge Plasma"
+        ],
+        "abstract": "This talk covers the recent advancements in understanding Edge Localized Modes (ELMs) and their suppression techniques using RMP coils. We discuss simulation results matching recent experiments at ADITYA-U.",
+        "resources": {
+            "slides": "#",
+            "video": "#"
+        }
+    },
+    {
+        "id": "2",
+        "title": "Solar Wind Interaction with Earth's Magnetosphere",
+        "speakerName": "Prof. Rajesh Kumar",
+        "speakerId": "102",
+        "affiliation": "IIT Delhi",
+        "session": "Technical Session 2",
+        "date": "2023-12-12",
+        "time": "02:15 PM",
+        "type": "Oral",
+        "tags": [
+            "Space Plasma",
+            "Magnetosphere",
+            "Solar Wind"
+        ],
+        "abstract": "Analyzing the reconnection events observed by the MMS mission. A detailed look at the electron diffusion region and its implications for space weather forecasting models.",
+        "resources": {
+            "slides": "#",
+            "video": "#"
+        }
+    },
+    {
+        "id": "3",
+        "title": "High Energy Density Physics with Ultra-Intense Lasers",
+        "speakerName": "Dr. Sarah Jenkins",
+        "speakerId": "2",
+        "affiliation": "TIFR Mumbai",
+        "session": "Plenary Session 2",
+        "date": "2023-12-13",
+        "time": "09:00 AM",
+        "type": "Invited",
+        "tags": [
+            "Laser Plasma",
+            "HEDP",
+            "Fusion"
+        ],
+        "abstract": "Exploring the frontiers of laser-matter interaction at relativistic intensities. Applications in compact particle accelerators and fast ignition fusion schemes.",
+        "resources": {
+            "slides": "#",
+            "video": "#"
+        }
+    },
+    {
+        "id": "4",
+        "title": "Dusty Plasma Crystal Formation in DC Glow Discharge",
+        "speakerName": "Karthik S.",
+        "speakerId": "103",
+        "affiliation": "CPP-IPR Sonapur",
+        "session": "Poster Session A",
+        "date": "2023-12-13",
+        "time": "04:00 PM",
+        "type": "Poster",
+        "tags": [
+            "Basic Plasma",
+            "Dusty Plasma",
+            "Crystals"
+        ],
+        "abstract": "Experimental observation of hexagonal lattice formation in dusty plasma. Analysis of coupling parameter and phase transition dynamics under varying pressure conditions.",
+        "resources": {
+            "poster": "#"
+        }
+    },
+    {
+        "id": "5",
+        "title": "Status of ITER and Future of Fusion Energy",
+        "speakerName": "Dr. Bernard Bigot",
+        "speakerId": "104",
+        "affiliation": "ITER Organization",
+        "session": "Plenary Session 3",
+        "date": "2023-12-14",
+        "time": "11:00 AM",
+        "type": "Plenary",
+        "tags": [
+            "Tokamaks",
+            "Fusion",
+            "ITER"
+        ],
+        "abstract": "An update on the construction progress of the ITER tokamak in France. Challenges in assembly, component manufacturing, and the roadmap to First Plasma.",
+        "resources": {
+            "slides": "#",
+            "video": "#"
+        }
+    }
+]

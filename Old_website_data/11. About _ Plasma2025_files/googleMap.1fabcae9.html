@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- saved from url=(0363)https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/media/googleMap.1fabcae9.html?defaultLocation=0&showZoom=true&showMapType=true&language=en&id=dataItem-md97iu3w&googleMapsScriptPath=%2Fservices%2Feditor-elements-library%2Fdist%2Fthunderbolt%2Fmedia%2Fgoogle-map.min.5d8ab435.js&origin=https%3A%2F%2Fwww.plasma2025.com&hasFocus=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <style type="text/css">
+        * {
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        html {
+          height: 100%;
+        }
+
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        #map_canvas {
+          height: 100%;
+          width: 100%;
+        }
+
+        .gm-style-iw p {
+          width: 101%;
+        }
+
+        #content {
+          overflow-x: hidden;
+        }
+
+        .no-focus *:focus,
+        .no-focus *:focus-visible {
+          outline: none !important;
+        }
+
+        /*
+         * FYI:
+         * Weird selector that hides google map custom focus indicator
+         * Writing such weird selector since this div doesn't have any id or class
+         */
+         .no-focus div[style*="pointer-events: none"] {
+          border: 0 !important;
+        }
+      </style>
+      <script>
+        (function () {
+          var params = new URLSearchParams(window.location.search);
+          var decodedGoogleMapsScriptPath = decodeURIComponent(
+            params.get('googleMapsScriptPath'),
+          );
+          var googleMapsScriptPath;
+          try { // if it is an URL, get only path part
+            googleMapsScriptPath = new URL(decodedGoogleMapsScriptPath).pathname;
+          } catch (e) {
+            googleMapsScriptPath = decodedGoogleMapsScriptPath;
+          }
+          var scriptUrl = `${googleMapsScriptPath}?origin=${decodeURIComponent(params.get('origin'))}`;
+
+          var script = document.createElement('script');
+          script.src = scriptUrl;
+          document.head.appendChild(script);
+
+          document.addEventListener('DOMContentLoaded', function () {
+            if (params.get('hasFocus') === 'false') {
+              document.body.classList.add('no-focus');
+            }
+          });
+        })();
+      </script><script src="./google-map.min.5d8ab435.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./common.js"></script><script type="text/javascript" charset="UTF-8" src="./util.js"></script><script type="text/javascript" charset="UTF-8" src="./map.js"></script><script type="text/javascript" charset="UTF-8" src="./marker.js"></script><script type="text/javascript" charset="UTF-8" src="./infowindow.js"></script></head>
+  
+  <body>
+    <div id="map_canvas"><div style="height: 100%; width: 100%;"><div style="overflow: hidden;"></div></div></div>
+  
+
+<script type="text/javascript" src="./js"></script></body></html>
