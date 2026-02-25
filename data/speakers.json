@@ -1,30 +1,242 @@
 [
     {
         "id": "1",
-        "name": "Prof. D. Kartikeyan",
-        "role": "Chief Guest",
-        "affiliation": "Distinguished Scientist",
-        "image": "/speakers/kartikeyan.png"
+        "name": "Prof. Joydeep Ghosh",
+        "affiliation": "IPR Gandhinagar",
+        "image": "/speakers/Joydeep Ghosh.jpg"
     },
     {
         "id": "2",
-        "name": "Dr. Umesh Kadhane",
-        "role": "Keynote Speaker",
-        "affiliation": "IIST Thiruvananthapuram",
-        "image": "/speakers/umesh-kadhane.png"
+        "name": "Prof. Peter Bruggeman",
+        "affiliation": "University of Minnesota, USA",
+        "image": "/speakers/Peter Bruggeman_edited.jpg"
     },
     {
         "id": "3",
-        "name": "Prof. S. Pradhan",
-        "role": "Plenary Speaker",
-        "affiliation": "IPR Gandhinagar",
-        "image": "https://via.placeholder.com/400x500?text=Prof.+Pradhan"
+        "name": "Prof. Umesh Kadhane",
+        "affiliation": "IIST Thiruvananthapuram",
+        "image": "/speakers/Umesh Kadhane.png"
     },
     {
         "id": "4",
-        "name": "Dr. R. Mukherjee",
-        "role": "Invited Speaker",
-        "affiliation": "PSSI President",
-        "image": "https://via.placeholder.com/400x500?text=Dr.+Mukherjee"
+        "name": "Prof. Ahmad Hamdan",
+        "affiliation": "Université de Montréal, Canada",
+        "image": "/speakers/Hamdan Ahmad.jpeg"
+    },
+    {
+        "id": "5",
+        "name": "Prof. Jan Trieschmann",
+        "affiliation": "Kiel University, Germany",
+        "image": "/speakers/Trischmen.jpeg"
+    },
+    {
+        "id": "6",
+        "name": "Dr. Nishant Sirse",
+        "affiliation": "IPS Academy, Indore",
+        "image": "/speakers/Nishant Nirse.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Prof. Brijesh Srivastava",
+        "affiliation": "Tezpur University",
+        "image": "/speakers/Prof. Brijesh Srivastava.jpeg"
+    },
+    {
+        "id": "8",
+        "name": "Dr. Trivikram Nallamilli",
+        "affiliation": "IIT Tirupati",
+        "image": "/speakers/Trivikram IITT.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Dr. Srikumar Ghorui",
+        "affiliation": "BARC, Mumbai",
+        "image": "/speakers/Dr. Srikumar Ghorui.jpeg"
+    },
+    {
+        "id": "10",
+        "name": "Prof. M. V. Kartikeyan",
+        "affiliation": "IIITDM-Kancheepuram",
+        "image": "/speakers/Kartikeyan.png"
+    },
+    {
+        "id": "11",
+        "name": "Prof. Animesh Kuley",
+        "affiliation": "IISc Bengaluru",
+        "image": "/speakers/Animesh_Kuley.jpg"
+    },
+    {
+        "id": "12",
+        "name": "Dr. Santanu Karmakar",
+        "affiliation": "MTRDC Bengaluru",
+        "image": "/speakers/Dr. Santanu Karmakar.jpeg"
+    },
+    {
+        "id": "13",
+        "name": "Prof. P. Murali Krishna",
+        "affiliation": "NIFTEM Kundli",
+        "image": "/speakers/Murali Krishna_edited.jpg"
+    },
+    {
+        "id": "14",
+        "name": "Dr. Apeksha Madhukar",
+        "affiliation": "IIT Goa",
+        "image": "/speakers/apeksha.jpg"
+    },
+    {
+        "id": "15",
+        "name": "Dr. Prashant K Singh",
+        "affiliation": "TIFR Hyderabad",
+        "image": "/speakers/Dr. Prashant K Singh.jpeg"
+    },
+    {
+        "id": "16",
+        "name": "Prof. Nishant K. Singh",
+        "affiliation": "IUCAA, Pune",
+        "image": "/speakers/Nishant Singh_edited.jpg"
+    },
+    {
+        "id": "17",
+        "name": "Prof. Avinash Khare",
+        "affiliation": "Sikkim University",
+        "image": "/speakers/Avinash Khare.jpg"
+    },
+    {
+        "id": "18",
+        "name": "K.M. Shanbhogue",
+        "affiliation": "LPSC, ISRO",
+        "image": "/speakers/KKMS-Photo.jpg"
+    },
+    {
+        "id": "19",
+        "name": "Prof. Lakshminarayana Rao",
+        "affiliation": "IISc Bengaluru",
+        "image": "/speakers/Lakshminarayana Rao.jpg"
+    },
+    {
+        "id": "20",
+        "name": "Prof. K. Ramachandran",
+        "affiliation": "Bharathiar University",
+        "image": "/speakers/K_edited.jpg"
+    },
+    {
+        "id": "21",
+        "name": "Prof. Subrahmanyam",
+        "affiliation": "IIT Hyderabad",
+        "image": "/speakers/Subrahmanyam IIT Hyderabad.jpeg"
+    },
+    {
+        "id": "22",
+        "name": "Dr. Jagannath Malik",
+        "affiliation": "IIT Patna",
+        "image": "/speakers/Jagannath_Malik_edited.jpg"
+    },
+    {
+        "id": "23",
+        "name": "Prof. P.K. Karmakar",
+        "affiliation": "Tezpur University",
+        "image": "/speakers/Prof. P.K. Karmakar.jpeg"
+    },
+    {
+        "id": "24",
+        "name": "Dr. Srinivasa Prasannaa V",
+        "affiliation": "TCG CREST-CQuERE, Kolkata",
+        "image": "/speakers/Srinivasa Prasannaa.jpg"
+    },
+    {
+        "id": "25",
+        "name": "Prof. Sudeep Bhattacharjee",
+        "affiliation": "IIT Kanpur",
+        "image": "/speakers/Sudeep Bhattacharjee.jpg"
+    },
+    {
+        "id": "26",
+        "name": "Prof. B.K. Sahoo",
+        "affiliation": "PRL, Ahmedabad",
+        "image": "/speakers/Bijaya K. Sahoo.jpg"
+    },
+    {
+        "id": "27",
+        "name": "Prof. Ram Prasad Prajapati",
+        "affiliation": "JNU, New Delhi",
+        "image": "/speakers/Dr. Ram Prasad Prajapati.jpeg"
+    },
+    {
+        "id": "28",
+        "name": "Dr. Vishant Gahlaut",
+        "affiliation": "Banasthali University",
+        "image": "/speakers/Vishant gahlaut.jpeg"
+    },
+    {
+        "id": "29",
+        "name": "Dr. Sushil Kumar Singh",
+        "affiliation": "Czech Tec. University, Prague",
+        "image": "/speakers/Sushil Kumar Singh_edited.jpg"
+    },
+    {
+        "id": "30",
+        "name": "Dr. Venu Anand",
+        "affiliation": "NIT Calicut",
+        "image": "/speakers/Venu Anand.jpeg"
+    },
+    {
+        "id": "31",
+        "name": "Dr. Shashi Ranjan",
+        "affiliation": "Faraday Earth Pvt. Ltd",
+        "image": "/speakers/Dr. Shashi Ranjan.jpeg"
+    },
+    {
+        "id": "32",
+        "name": "Dr. Kirit Makwana",
+        "affiliation": "IIT Hyderabad",
+        "image": "/speakers/Kirit Makwana.jpg"
+    },
+    {
+        "id": "33",
+        "name": "Prof. Amita Das",
+        "affiliation": "IIT Delhi",
+        "image": "/speakers/Prof. Amrita Das.jpeg"
+    },
+    {
+        "id": "34",
+        "name": "Prof. Mainak Bandyopadhyay",
+        "affiliation": "IPR Gandhinagar",
+        "image": "/speakers/Mainak Bandyopadhyay.jpeg"
+    },
+    {
+        "id": "35",
+        "name": "Prof. Shihabudheen M. M",
+        "affiliation": "IIT Tirupati",
+        "image": "/speakers/Shihab_edited.jpg"
+    },
+    {
+        "id": "36",
+        "name": "Prof. Sanat Tiwari",
+        "affiliation": "IIT Jammu",
+        "image": "/speakers/Sanat Tiwari.jpeg"
+    },
+    {
+        "id": "37",
+        "name": "Dr. Surabhi Jaiswal",
+        "affiliation": "IISER Pune",
+        "image": "/speakers/Surabhi Jaiswal.jpg"
+    },
+    {
+        "id": "38",
+        "name": "Dr. Rajib Kar",
+        "affiliation": "BARC, Mumbai",
+        "image": "/speakers/Rajib Kar.jpeg"
+    },
+    {
+        "id": "39",
+        "name": "Dr. J. Padma Nilaya",
+        "affiliation": "BARC, Mumbai",
+        "image": "/speakers/Padma Nilaya Final.jpg"
+    },
+    {
+        "id": "40",
+        "name": "Prof. Luc Stafford",
+        "affiliation": "Université de Montréal, Canada",
+        "image": "/speakers/Prof. Luc Stafford.jpeg"
     }
 ]

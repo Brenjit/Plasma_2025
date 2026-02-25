@@ -78,7 +78,6 @@ export default function Footer() {
                         <div className="flex flex-wrap gap-4 items-center">
                             <img src="/logos/iit-tirupati.png" alt="IIT Tirupati" className="h-12 w-auto object-contain bg-white rounded" />
                             <img src="/logos/iiser-tirupati.png" alt="IISER Tirupati" className="h-12 w-auto object-contain bg-white rounded" />
-                            <img src="/logos/pssi.png" alt="PSSI" className="h-12 w-auto object-contain bg-white rounded" />
                         </div>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ export default function GalleryPage() {
                                     </span>
                                 </div>
                                 <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl font-display">
-                                    Visual Highlights 2023
+                                    Visual Highlights 2025
                                 </h2>
                                 <p className="text-lg font-light leading-relaxed text-gray-200 sm:text-xl border-l-2 border-primary pl-4">
                                     Exploring the frontiers of plasma science. A curated collection

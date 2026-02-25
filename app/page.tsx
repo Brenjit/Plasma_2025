@@ -1,11 +1,45 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import HeroSlider from "@/components/HeroSlider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteConfig from "@/data/site.config.json";
 import speakersData from "@/data/speakers.json";
+
+function CountUp({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+      else setCount(target);
+    };
+    requestAnimationFrame(step);
+  }, [started, target, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export default function Home() {
   return (
@@ -13,73 +47,98 @@ export default function Home() {
       <Header />
 
       <main className="flex-grow flex flex-col">
-        {/* Hero Section - Full Width */}
-        <section className="relative w-full lg:h-[60vh] lg:min-h-[500px]">
-          <div className="relative overflow-hidden bg-[#2a0a0a] text-white shadow-2xl h-full flex items-center">
-            {/* Hero Image Slider */}
-            <div className="absolute inset-0 z-0">
-              <HeroSlider />
-              {/* Subtle Gradient from Left to Right */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2a0a0a]/90 via-[#2a0a0a]/40 to-transparent pointer-events-none"></div>
-            </div>
+        {/* Hero Section — Split layout with blurred bg */}
+        <section className="relative w-full overflow-hidden">
 
-            {/* Content */}
-            <div className="relative z-10 flex flex-col items-start justify-center px-6 py-20 sm:px-12 lg:px-16 lg:py-0 max-w-7xl mx-auto w-full">
+          {/* Blurred background slider — same photos, soft behind everything */}
+          <div className="absolute inset-0 z-0 scale-110">
+            <HeroSlider />
+          </div>
+          {/* Dark gradient overlay over the background */}
+          <div className="absolute inset-0 z-0 backdrop-blur-sm bg-black/5 bg-gradient-to-br from-black/80 via-[#1a0505]/70 to-black/50" />
 
-              <div className="mb-4 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary backdrop-blur-sm border border-white/10">
-                Official Symposium
+          {/* Foreground content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row items-center gap-10 py-14 lg:py-20">
+
+              {/* Left — Text content */}
+              <div className="flex-1 flex flex-col items-start justify-center text-white order-2 lg:order-1">
+                <div className="mb-4 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary backdrop-blur-sm border border-white/10">
+                  Official Symposium
+                </div>
+                <h1 className="mb-2 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white font-display uppercase">
+                  PLASMA 2025
+                </h1>
+                <p className="mb-2 text-xl sm:text-2xl text-gray-100 font-medium">
+                  40th PSSI National Symposium on Plasma Science & Technology
+                </p>
+                <p className="mb-5 text-lg sm:text-xl text-secondary font-display italic tracking-wide">
+                  For Sustainable Future
+                </p>
+                <p className="mb-8 text-lg text-gray-300 flex items-center gap-2 flex-wrap">
+                  <span className="material-symbols-outlined text-secondary">calendar_month</span>
+                  Dec 27 - 29, 2025
+                  <span className="mx-2 text-gray-500">|</span>
+                  <span className="material-symbols-outlined text-secondary">location_on</span>
+                  IIT Tirupati
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/proceedings">
+                    <button className="bg-primary hover:bg-primary-dark text-white text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-primary/30 flex items-center gap-2">
+                      <span className="material-symbols-outlined">article</span>
+                      View Proceedings
+                    </button>
+                  </Link>
+                  <Link href="/gallery">
+                    <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 backdrop-blur-sm flex items-center gap-2">
+                      <span className="material-symbols-outlined">photo_library</span>
+                      View Gallery
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <h1 className="mb-2 max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white font-display uppercase">
-                PLASMA 2025
-              </h1>
-              <p className="mb-2 max-w-3xl text-xl sm:text-2xl text-gray-100 font-medium">
-                40th PSSI National Symposium on Plasma Science & Technology
-              </p>
-              <p className="mb-6 text-lg sm:text-xl text-secondary font-display italic tracking-wide">
-                For Sustainable Future
-              </p>
-              <p className="mb-8 max-w-2xl text-lg text-gray-300 sm:text-lg flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary">calendar_month</span>
-                Dec 27 - 29, 2025
-                <span className="mx-2 text-gray-500">|</span>
-                <span className="material-symbols-outlined text-secondary">location_on</span>
-                IIT Tirupati
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/proceedings">
-                  <button className="bg-primary hover:bg-primary-dark text-white text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-primary/30 flex items-center gap-2">
-                    <span className="material-symbols-outlined">article</span>
-                    View Proceedings
-                  </button>
-                </Link>
-                <Link href="#speakers">
-                  <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 backdrop-blur-sm flex items-center gap-2">
-                    <span className="material-symbols-outlined">group</span>
-                    View Speakers
-                  </button>
-                </Link>
+
+              {/* Right — Sharp card slider */}
+              <div className="w-full lg:w-[52%] order-1 lg:order-2 flex-shrink-0">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl ring-2 ring-white/10" style={{ aspectRatio: "16/10" }}>
+                  <HeroSlider />
+                </div>
               </div>
+
             </div>
           </div>
         </section>
+
 
         {/* Stats Grid */}
         <section className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: "Delegates", value: "500+" },
-                { label: "Keynote Speakers", value: "40+" },
-                { label: "Technical Sessions", value: "100+" },
-                { label: "Sponsors", value: "20+" },
+                { label: "Delegates", target: 500, suffix: "+" },
+                { label: "Keynote Speakers", target: 40, suffix: "+" },
+                { label: "Technical Sessions", target: 100, suffix: "+" },
+                { label: "Sponsors", target: 20, suffix: "+" },
               ].map((stat, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-1 items-start hover:border-primary/50 transition-colors">
-                  <span className="text-primary text-4xl font-bold tracking-tight font-display">{stat.value}</span>
+                <div
+                  key={i}
+                  className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-1 items-start hover:border-primary/50 transition-all duration-300 hover:shadow-md"
+                  style={{ animation: `fadeSlideUp 0.5s ease ${i * 100}ms both` }}
+                >
+                  <span className="text-primary text-4xl font-bold tracking-tight font-display">
+                    <CountUp target={stat.target} suffix={stat.suffix} />
+                  </span>
                   <span className="text-gray-600 font-medium">{stat.label}</span>
                 </div>
               ))}
             </div>
           </div>
+          <style>{`
+            @keyframes fadeSlideUp {
+              from { opacity: 0; transform: translateY(20px); }
+              to   { opacity: 1; transform: translateY(0); }
+            }
+          `}</style>
         </section>
 
         {/* Welcome & Features - Split Layout */}
@@ -109,29 +168,63 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Right: Logos Grid */}
+              {/* Right: Sponsors tiered showcase */}
               <div className="lg:w-7/12 flex items-center justify-center">
-                <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm w-full">
-                  <h3 className="text-center text-gray-500 font-medium uppercase tracking-widest mb-8 text-sm">Organized By</h3>
-                  <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                    <img
-                      src="/logos/pssi.png"
-                      alt="PSSI"
-                      className="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="h-12 w-px bg-gray-200 hidden sm:block"></div>
-                    <img
-                      src="/logos/iit-tirupati.png"
-                      alt="IIT Tirupati"
-                      className="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="h-12 w-px bg-gray-200 hidden sm:block"></div>
-                    <img
-                      src="/logos/iiser-tirupati.png"
-                      alt="IISER Tirupati"
-                      className="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
+                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm w-full space-y-5">
+                  <h3 className="text-center text-gray-500 font-medium uppercase tracking-widest text-sm">Our Sponsors</h3>
+
+                  {/* Title Sponsor — largest */}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-2">Title Sponsor</p>
+                    <div className="flex flex-wrap justify-center items-center gap-6">
+                      <img src="/sponsors/AtosLogofinal_edited.png" alt="ATOS" className="h-14 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Ozone_crop.jpeg" alt="OCIPL" className="h-14 w-auto object-contain hover:scale-105 transition-transform" />
+                    </div>
                   </div>
+
+                  <div className="border-t border-gray-100" />
+
+                  {/* Diamond + Platinum — large */}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-2">Diamond / Platinum</p>
+                    <div className="flex flex-wrap justify-center items-center gap-5">
+                      <img src="/sponsors/ANRF_Anushandhan.jpeg" alt="ANRF" className="h-10 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/BRNS.jpeg" alt="BRNS" className="h-10 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Simco high definition.png" alt="SIMCO" className="h-10 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/brunker.svg" alt="Bruker" className="h-10 w-auto object-contain hover:scale-105 transition-transform" />
+                    </div>
+                  </div>
+
+                  <div className="border-t border-gray-100" />
+
+                  {/* Gold — medium */}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-2">Gold Sponsors</p>
+                    <div className="flex flex-wrap justify-center items-center gap-4">
+                      <img src="/sponsors/ELTECH LOGO (1).png" alt="Eltech" className="h-8 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/PSSI.png" alt="PSSI" className="h-8 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/ASPL_FUSION.jpg" alt="ASPL Fusion" className="h-8 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Deepam Biotek.png" alt="Deepam Biotek" className="h-8 w-auto object-contain hover:scale-105 transition-transform" />
+                    </div>
+                  </div>
+
+                  <div className="border-t border-gray-100" />
+
+                  {/* Silver / Bronze / Others — small */}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-2">Silver · Bronze · Others</p>
+                    <div className="flex flex-wrap justify-center items-center gap-3">
+                      <img src="/sponsors/swan-scientific-logo.png" alt="Swan Scientific" className="h-6 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/LASER_Science.png" alt="Laser Science" className="h-6 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/Pfeiffer.png" alt="Pfeiffer" className="h-6 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/PerkinElmer SWP Full Color.jpg" alt="PerkinElmer" className="h-6 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/DRDO.png" alt="DRDO" className="h-6 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/comsol-logo-130x20.png" alt="COMSOL" className="h-5 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/IOP_publishing.png" alt="IOP Publishing" className="h-5 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                      <img src="/sponsors/Power Beam Society.png" alt="Power Beam" className="h-5 w-auto object-contain hover:scale-105 transition-transform opacity-80" />
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -144,43 +237,133 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-12 font-display text-center">
               Event Highlights
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Proceedings Card */}
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-3xl">article</span>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+              {/* ── Proceedings Card ── */}
+              <Link href="/proceedings" className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 bg-white flex flex-col cursor-pointer">
+                {/* Photo collage — asymmetric magazine layout */}
+                <div className="relative h-64 flex gap-0.5 overflow-hidden flex-shrink-0">
+
+                  {/* Left column — tall portrait spanning full height */}
+                  <div className="w-[45%] overflow-hidden flex-shrink-0">
+                    <img
+                      src="/home_proceeding_collage/DSC_2273.jpg"
+                      alt="Conference"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Middle column — wide landscape stacked above a short strip */}
+                  <div className="flex-1 flex flex-col gap-0.5">
+                    <div className="flex-[2] overflow-hidden">
+                      <img
+                        src="/home_proceeding_collage/DSC_2551.jpg"
+                        alt="Conference"
+                        className="w-full h-full object-cover transition-transform duration-700 delay-75 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex-[1] overflow-hidden">
+                      <img
+                        src="/home_proceeding_collage/DSC_2566.jpg"
+                        alt="Conference"
+                        className="w-full h-full object-cover transition-transform duration-700 delay-150 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Right narrow column — a single tall sliver */}
+                  <div className="w-[18%] overflow-hidden flex-shrink-0">
+                    <img
+                      src="/home_proceeding_collage/DSC_2800.jpg"
+                      alt="Conference"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 delay-200 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Dark overlay + badge */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4">
+                    <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Proceedings</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 font-display">Conference Proceedings</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
-                  Access the full collection of abstract books and technical papers presented at Plasma 2025.
-                </p>
-                <Link href="/proceedings">
-                  <button className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+
+
+                {/* Text content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <span className="material-symbols-outlined text-2xl">article</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Conference Proceedings</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                    Access the full collection of abstract books and technical papers presented at Plasma 2025.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-primary font-bold group-hover:gap-3 transition-all">
                     View Proceedings
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
-                </Link>
-              </div>
-
-              {/* Gallery Card */}
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-3xl">photo_library</span>
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 font-display">Event Gallery</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
-                  Explore the visual highlights of the symposium, including technical sessions and cultural events.
-                </p>
-                <Link href="/gallery">
-                  <button className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+              </Link>
+
+              {/* ── Gallery Card ── */}
+              <Link href="/gallery" className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 bg-white flex flex-col cursor-pointer">
+                {/* 4-photo mosaic */}
+                <div className="relative h-56 grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden flex-shrink-0">
+                  <div className="overflow-hidden">
+                    <img
+                      src="https://lh3.googleusercontent.com/d/1q_RNKE0I5fRRoiQKNsZgFq-fvTUDc3hr"
+                      alt="Gallery Day 2"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="overflow-hidden">
+                    <img
+                      src="https://lh3.googleusercontent.com/d/1UT0OAqULY4jz9nDXgvRncvt9LRpEbjM3"
+                      alt="Gallery Day 2"
+                      className="w-full h-full object-cover transition-transform duration-700 delay-75 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="overflow-hidden">
+                    <img
+                      src="https://lh3.googleusercontent.com/d/1lGIfkwWL_w03gbLFUg8Ky6ly6M-BBqbi"
+                      alt="Gallery Day 3"
+                      className="w-full h-full object-cover transition-transform duration-700 delay-150 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="overflow-hidden">
+                    <img
+                      src="https://lh3.googleusercontent.com/d/1w0is6gzH0alTTjgrwtXHn7XWEnowZ_7h"
+                      alt="Gallery Day 1"
+                      className="w-full h-full object-cover transition-transform duration-700 delay-100 group-hover:scale-110"
+                    />
+                  </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                    <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">Day 1 · Day 2 · Day 3</span>
+                  </div>
+                </div>
+
+                {/* Text content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <span className="material-symbols-outlined text-2xl">photo_library</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Event Gallery</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                    Explore the visual highlights of the symposium — technical sessions, keynote addresses, and cultural evenings across 3 days.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-primary font-bold group-hover:gap-3 transition-all">
                     View Gallery
                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </button>
-                </Link>
-              </div>
+                  </span>
+                </div>
+              </Link>
+
             </div>
           </div>
         </section>
+
 
         {/* Speakers Section - Horizontal Scroll */}
         <section id="speakers" className="py-16 bg-white border-t border-gray-200">
@@ -190,7 +373,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-gray-900 font-display">Distinguished Speakers</h2>
                 <p className="text-gray-500 mt-2">Leading voices in Plasma Physics who graced the occasion.</p>
               </div>
-              <Link href="/proceedings" className="hidden sm:flex items-center text-primary font-semibold hover:underline">
+              <Link href="/speakers" className="hidden sm:flex items-center text-primary font-semibold hover:underline">
                 View All Speakers
                 <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
               </Link>
@@ -198,7 +381,7 @@ export default function Home() {
 
             <div className="flex overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory gap-6 no-scrollbar">
               {speakersData.map((speaker, index) => (
-                <div key={speaker.id} className="snap-start shrink-0 w-64 md:w-72">
+                <div key={speaker.id} className="snap-start shrink-0 w-40 md:w-48">
                   <div className="group relative rounded-xl overflow-hidden aspect-[4/5] mb-4 bg-gray-100 border border-gray-100">
                     <img
                       alt={speaker.name}
@@ -209,11 +392,10 @@ export default function Home() {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <p className="text-white text-sm font-medium">{speaker.role}</p>
+                      <p className="text-white text-sm font-medium">{speaker.affiliation}</p>
                     </div>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 font-display">{speaker.name}</h3>
-                  <p className="text-sm text-primary font-medium mb-1">{speaker.role.split(':')[0]}</p>
                   <p className="text-sm text-gray-500 line-clamp-1">{speaker.affiliation}</p>
                 </div>
               ))}
@@ -221,21 +403,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sponsors Section */}
-        <section id="sponsors" className="py-12 bg-gray-50 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Sponsored By</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0">
-              {/* Real Logos */}
-              <img src="/logos/pssi.png" alt="PSSI" className="h-16 w-auto object-contain mix-blend-multiply" />
-              <img src="/logos/iit-tirupati.png" alt="IIT Tirupati" className="h-16 w-auto object-contain mix-blend-multiply" />
-              <img src="/logos/iiser-tirupati.png" alt="IISER Tirupati" className="h-16 w-auto object-contain mix-blend-multiply" />
-            </div>
-          </div>
-        </section>
+
 
         <Footer />
       </main>
-    </div>
+    </div >
   );
 }

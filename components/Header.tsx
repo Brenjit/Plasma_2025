@@ -11,11 +11,11 @@ export default function Header() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
         { name: "Proceedings", href: "/proceedings" },
         { name: "Gallery", href: "/gallery" },
-        { name: "Speakers", href: "/#speakers" },
+        { name: "Speakers", href: "/speakers" },
         { name: "Sponsors", href: "/sponsors" },
+        { name: "About", href: "/about" },
     ];
 
     return (
