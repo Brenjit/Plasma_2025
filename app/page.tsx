@@ -306,7 +306,7 @@ export default function Home() {
               </Link>
 
               {/* ── Gallery Card ── */}
-              <Link href="/gallery" className="group relative rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 bg-white flex flex-col cursor-pointer">
+              <Link href="/gallery" className="group_1 relative rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 bg-white flex flex-col cursor-pointer">
                 {/* 4-photo mosaic */}
                 <div className="relative h-56 grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden flex-shrink-0">
                   <div className="overflow-hidden">
