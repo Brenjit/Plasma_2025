@@ -27,7 +27,7 @@ export default function Header() {
                         <Link href="/" className="flex items-center gap-4 group">
                             <div className="w-20 h-20 rounded-lg bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
                                 <img
-                                    src="/images/plasma_logo.png"
+                                    src="/images/plasma_logo.jpg"
                                     alt="Plasma 2025 Logo"
                                     className="w-full h-full object-contain"
                                 />
