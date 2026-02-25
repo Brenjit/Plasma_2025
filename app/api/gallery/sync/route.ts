@@ -15,13 +15,14 @@ const getDrive = () => {
     try {
         if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
             const SCOPES = ["https://www.googleapis.com/auth/drive.readonly"];
-            const auth = new google.auth.JWT(
-                process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-                undefined,
-                process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
-                SCOPES
-            );
-            return google.drive({ version: "v3", auth });
+            const auth = new google.auth.GoogleAuth({
+                credentials: {
+                    client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+                    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+                },
+                scopes: SCOPES,
+            });
+            return google.drive({ version: "v3", auth: auth as any });
         }
     } catch (error) {
         console.error("Service Account Auth Error:", error);
