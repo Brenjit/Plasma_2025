@@ -192,11 +192,15 @@ export default function AdminGalleryPage() {
                 return existing ? { ...newImg, tags: existing.tags } : newImg;
             });
 
-            // Update event thumbnail if not set
+            // Update event thumbnail — use previewUrl (lh3.googleusercontent.com) as it's
+            // embeddable in browsers. drive.google.com/uc links are blocked by Google for <img> tags.
+            const bestThumbnail = newImages.length > 0
+                ? (newImages[0].previewUrl || newImages[0].url)
+                : event.thumbnail;
             const updatedEvent = {
                 ...event,
                 images: newImages,
-                thumbnail: event.thumbnail || (newImages.length > 0 ? newImages[0].url : event.thumbnail)
+                thumbnail: bestThumbnail
             };
 
             // Update Data

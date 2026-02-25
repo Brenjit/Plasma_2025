@@ -13,10 +13,16 @@ export default function GalleryItem({ item, onClick }: { item: GalleryImage, onC
         >
             <div className="relative overflow-hidden aspect-[4/3]">
                 <img
-                    src={item.previewUrl || item.url} // Use previewUrl if available
+                    src={item.previewUrl || item.url}
                     alt={item.tags ? item.tags.join(", ") : "Gallery Image"}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
+                    onError={(e) => {
+                        // If previewUrl expired/broken, fall back to permanent Drive URL
+                        if (e.currentTarget.src !== item.url) {
+                            e.currentTarget.src = item.url;
+                        }
+                    }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
                     <span className="material-symbols-outlined text-white text-3xl drop-shadow-lg">zoom_in</span>

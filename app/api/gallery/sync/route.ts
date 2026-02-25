@@ -63,19 +63,15 @@ export async function POST(request: Request) {
         }
 
         // Transform to GalleryImage format
-        // use 'thumbnailLink' for the grid (fast, avoids 403s), and 'drive.google.com/uc' for the full view
+        // Use our server-side image proxy for previewUrl — it streams images via service account auth,
+        // so files don't need to be publicly shared on Drive.
         const images = files.map(file => {
-            // thumbnailLink usually comes as small size (e.g. =s220). 
-            // We can replace it with =w600-h400 to get a decent preview size.
-            let previewUrl = file.thumbnailLink;
-            if (previewUrl && previewUrl.includes("=s")) {
-                previewUrl = previewUrl.replace(/=s\d+/, "=w600-h400"); // Request larger thumbnail
-            }
+            const previewUrl = `/api/gallery/image?id=${file.id}`;
 
             return {
                 id: file.id!,
                 url: `https://drive.google.com/uc?export=view&id=${file.id}`,
-                previewUrl: previewUrl || null, // Add previewUrl
+                previewUrl,
                 tags: []
             };
         });

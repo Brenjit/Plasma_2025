@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
-import GalleryItem from "@/components/GalleryItem"; // Updated component
-import galleryData from "@/data/gallery.json";
+import GalleryItem from "@/components/GalleryItem";
 
 const Header = dynamic(() => import("@/components/Header"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
@@ -26,16 +25,35 @@ interface Event {
 }
 
 export default function GalleryPage() {
-    // Current active event ID. "all" means showing the list of events (Albums View).
     const [activeEventId, setActiveEventId] = useState("all");
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+    const [events, setEvents] = useState<Event[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    // Events list
-    const events: Event[] = galleryData.events;
+    // Fetch gallery data dynamically so it's always fresh after a sync
+    useEffect(() => {
+        fetch("/api/gallery")
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data.events || []);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+    }, []);
 
     const activeEvent = useMemo(() =>
         events.find(e => e.id === activeEventId),
         [activeEventId, events]);
+
+    if (loading) return (
+        <div className="bg-background-light min-h-screen flex flex-col font-display">
+            <Header />
+            <main className="flex-1 flex items-center justify-center">
+                <div className="text-gray-400 text-lg animate-pulse">Loading gallery...</div>
+            </main>
+            <Footer />
+        </div>
+    );
 
     return (
         <div className="bg-background-light min-h-screen flex flex-col font-display">
@@ -118,9 +136,18 @@ export default function GalleryPage() {
                                         {/* Cover Image */}
                                         <div className="relative h-64 overflow-hidden">
                                             <img
-                                                src={event.thumbnail || (event.images[0]?.url)}
+                                                src={event.images[0]?.previewUrl || event.thumbnail || event.images[0]?.url}
                                                 alt={event.name}
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                onError={(e) => {
+                                                    // Try thumbnail next, then permanent Drive URL
+                                                    const next = event.thumbnail && e.currentTarget.src !== event.thumbnail
+                                                        ? event.thumbnail
+                                                        : event.images[0]?.url;
+                                                    if (next && e.currentTarget.src !== next) {
+                                                        e.currentTarget.src = next;
+                                                    }
+                                                }}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
 
