@@ -96,13 +96,13 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link href="/proceedings">
-                    <button className="bg-primary hover:bg-primary-dark text-white text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-primary/30 flex items-center gap-2">
+                    <button className="bg-primary hover:bg-primary-dark text-white text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 animate-glow-primary flex items-center gap-2">
                       <span className="material-symbols-outlined">article</span>
                       View Proceedings
                     </button>
                   </Link>
                   <Link href="/gallery">
-                    <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 backdrop-blur-sm flex items-center gap-2">
+                    <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-base font-bold h-12 px-8 rounded-lg transition-all duration-200 backdrop-blur-sm animate-glow-white flex items-center gap-2">
                       <span className="material-symbols-outlined">photo_library</span>
                       View Gallery
                     </button>
