@@ -2,35 +2,79 @@
 
 import { useState, useEffect } from "react";
 
-export default function HeroSlider() {
-    const [images, setImages] = useState<string[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
+// Global state to sync multiple slider instances
+let globalImages: string[] = [];
+let globalCurrentIndex = 0;
+let globalImagesLoaded = false;
+let globalIntervalStarted = false;
 
+interface HeroSliderProps {
+    isBackground?: boolean;
+}
+
+export default function HeroSlider({ isBackground = false }: HeroSliderProps) {
+    const [images, setImages] = useState<string[]>(globalImages);
+    const [currentIndex, setCurrentIndex] = useState(globalCurrentIndex);
+
+    // Fetch images once globally
     useEffect(() => {
-        fetch("/api/slider-images")
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.images && data.images.length > 0) {
-                    setImages(data.images);
-                }
-            })
-            .catch((err) => console.error("Failed to load slider images", err));
+        if (!globalImagesLoaded) {
+            globalImagesLoaded = true;
+            fetch("/api/slider-images")
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.images && data.images.length > 0) {
+                        globalImages = data.images;
+                        // Dispatch event for all instances
+                        window.dispatchEvent(new CustomEvent("slider-images-loaded"));
+                    }
+                })
+                .catch((err) => console.error("Failed to load slider images", err));
+        }
+
+        const handleImagesLoaded = () => setImages(globalImages);
+        window.addEventListener("slider-images-loaded", handleImagesLoaded);
+
+        // Initial set in case it loaded before this component mounted
+        if (globalImages.length > 0) setImages(globalImages);
+
+        return () => window.removeEventListener("slider-images-loaded", handleImagesLoaded);
     }, []);
 
+    // Sync interval globally
     useEffect(() => {
         if (images.length <= 1) return;
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 5000); // 5 seconds per slide
-        return () => clearInterval(interval);
-    }, [images]);
+
+        // Only the main (foreground) slider controls the interval to avoid double-ticks
+        if (!isBackground && !globalIntervalStarted) {
+            globalIntervalStarted = true;
+            const interval = setInterval(() => {
+                globalCurrentIndex = (globalCurrentIndex + 1) % globalImages.length;
+                window.dispatchEvent(new CustomEvent("slider-index-changed", { detail: globalCurrentIndex }));
+            }, 5000); // 5 seconds per slide
+
+            return () => {
+                clearInterval(interval);
+                globalIntervalStarted = false;
+            };
+        }
+    }, [images, isBackground]);
+
+    // Listen for index changes
+    useEffect(() => {
+        const handleIndexChanged = (e: any) => setCurrentIndex(e.detail);
+        window.addEventListener("slider-index-changed", handleIndexChanged);
+        return () => window.removeEventListener("slider-index-changed", handleIndexChanged);
+    }, []);
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+        globalCurrentIndex = (globalCurrentIndex - 1 + images.length) % images.length;
+        window.dispatchEvent(new CustomEvent("slider-index-changed", { detail: globalCurrentIndex }));
     };
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
+        globalCurrentIndex = (globalCurrentIndex + 1) % images.length;
+        window.dispatchEvent(new CustomEvent("slider-index-changed", { detail: globalCurrentIndex }));
     };
 
     if (images.length === 0) {
@@ -59,8 +103,8 @@ export default function HeroSlider() {
                 </div>
             ))}
 
-            {/* Arrows */}
-            {images.length > 1 && (
+            {/* Arrows - Only show on foreground slider */}
+            {!isBackground && images.length > 1 && (
                 <>
                     <button
                         onClick={prevSlide}

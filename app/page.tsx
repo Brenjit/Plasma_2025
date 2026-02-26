@@ -52,7 +52,7 @@ export default function Home() {
 
           {/* Blurred background slider — same photos, soft behind everything */}
           <div className="absolute inset-0 z-0 scale-110">
-            <HeroSlider />
+            <HeroSlider isBackground={true} />
           </div>
           {/* Dark gradient overlay over the background */}
           <div className="absolute inset-0 z-0 backdrop-blur-sm bg-black/5 bg-gradient-to-br from-black/80 via-[#1a0505]/70 to-black/50" />
@@ -101,7 +101,7 @@ export default function Home() {
               {/* Right — Sharp card slider */}
               <div className="w-full lg:w-[52%] order-1 lg:order-2 flex-shrink-0">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl ring-2 ring-white/10" style={{ aspectRatio: "16/10" }}>
-                  <HeroSlider />
+                  <HeroSlider isBackground={false} />
                 </div>
               </div>
 
