@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import siteConfig from "@/data/site.config.json";
 import speakersData from "@/data/speakers.json";
 
-function CountUp({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
+function CountUp({ target, suffix = "", duration = 3000, delay = 500 }: { target: number; suffix?: string; duration?: number; delay?: number }) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -17,23 +17,35 @@ function CountUp({ target, suffix = "", duration = 2000 }: { target: number; suf
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Delay the start slightly so the user sees it begin after the page paints
+          setTimeout(() => setStarted(true), delay);
+          observer.disconnect();
+        }
+      },
       { threshold: 0.5 }
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [delay]);
 
   useEffect(() => {
     if (!started) return;
     const startTime = performance.now();
     const step = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      // ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
+
+      // easeOutExpo: incredibly fast start, very drawn-out creeping finish
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
       setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-      else setCount(target);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
     };
     requestAnimationFrame(step);
   }, [started, target, duration]);
@@ -64,7 +76,7 @@ export default function Home() {
               {/* Left — Text content */}
               <div className="flex-1 flex flex-col items-start justify-center text-white order-2 lg:order-1">
                 <div className="mb-4 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary backdrop-blur-sm border border-white/10">
-                  Official Symposium
+                  Official Archive
                 </div>
                 <h1 className="mb-2 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white font-display uppercase">
                   PLASMA 2025
