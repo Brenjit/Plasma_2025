@@ -80,7 +80,7 @@ export default function HeroSlider({ isBackground = false }: HeroSliderProps) {
     if (images.length === 0) {
         return (
             <img
-                src="/images/hero.png"
+                src="/home_slider/1_Group.jpg"
                 alt="Hero Fallback"
                 className="w-full h-full object-cover opacity-60 mix-blend-overlay"
             />
