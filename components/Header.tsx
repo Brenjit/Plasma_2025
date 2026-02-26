@@ -58,12 +58,12 @@ export default function Header() {
 
                         {/* CTA Button */}
                         <div className="hidden md:flex">
-                            <Link href="/proceedings">
+                            <a href="https://drive.google.com/file/d/1fWks6hCb-ywvMGdnoVGJGDYCSYoakB9Q/view" target="_blank" rel="noopener noreferrer">
                                 <button className="bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-5 rounded-lg transition-all duration-200 shadow-lg shadow-primary/20 flex items-center gap-2">
                                     <span className="material-symbols-outlined text-lg">download</span>
                                     Abstract Book
                                 </button>
-                            </Link>
+                            </a>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -95,12 +95,12 @@ export default function Header() {
                                 {link.name}
                             </Link>
                         ))}
-                        <Link href="/proceedings" onClick={() => setIsMobileMenuOpen(false)}>
+                        <a href="https://drive.google.com/file/d/1fWks6hCb-ywvMGdnoVGJGDYCSYoakB9Q/view" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                             <button className="w-full bg-primary text-white py-3 rounded-lg font-bold text-lg shadow-md mt-4 flex items-center justify-center gap-2">
                                 <span className="material-symbols-outlined">download</span>
                                 Abstract Book
                             </button>
-                        </Link>
+                        </a>
                     </nav>
                 </div>
             )}
