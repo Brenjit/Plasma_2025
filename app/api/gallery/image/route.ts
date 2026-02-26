@@ -43,21 +43,28 @@ export async function GET(request: Request) {
 
         const contentType = (res.headers as any)["content-type"] || "image/jpeg";
 
-        // Read stream into buffer
-        const chunks: Buffer[] = [];
-        await new Promise<void>((resolve, reject) => {
-            (res.data as NodeJS.ReadableStream).on("data", (chunk: Buffer) => chunks.push(chunk));
-            (res.data as NodeJS.ReadableStream).on("end", resolve);
-            (res.data as NodeJS.ReadableStream).on("error", reject);
+        // Convert Node.js Readable stream into a Web ReadableStream
+        // This streams the file directly to the browser chunk-by-chunk
+        // instead of buffering the entire image in memory (which crashes Vercel serverless functions).
+        const webStream = new ReadableStream({
+            start(controller) {
+                (res.data as NodeJS.ReadableStream).on("data", (chunk: Buffer) => {
+                    controller.enqueue(chunk);
+                });
+                (res.data as NodeJS.ReadableStream).on("end", () => {
+                    controller.close();
+                });
+                (res.data as NodeJS.ReadableStream).on("error", (err) => {
+                    controller.error(err);
+                });
+            }
         });
 
-        const buffer = Buffer.concat(chunks);
-
-        return new Response(buffer, {
+        return new Response(webStream, {
             headers: {
                 "Content-Type": contentType,
-                // Cache for 7 days — files don't change often
-                "Cache-Control": "public, max-age=604800, immutable",
+                // Cache for 7 days in browser, cache for 1 year in Vercel Edge Cache
+                "Cache-Control": "public, max-age=604800, s-maxage=31536000, stale-while-revalidate=86400, immutable",
             },
         });
 
