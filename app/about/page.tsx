@@ -95,7 +95,7 @@ export default function AboutPage() {
                         <div className="flex flex-col lg:flex-row items-stretch gap-0 mb-24 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 group border border-gray-100">
                             <div className="w-full lg:w-1/2 relative min-h-[400px]">
                                 <Image
-                                    src="/about/iit_tirupati.jpg"
+                                    src="/about/iit_tirupati_2.jpg"
                                     alt="IIT Tirupati Campus"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
