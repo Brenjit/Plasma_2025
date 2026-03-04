@@ -73,7 +73,7 @@ export default function AboutPage() {
                                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 opacity-90">
                                             <div className="flex flex-col items-center sm:items-start group">
                                                 <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                                                    <img src="/conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
+                                                    <img src="/Conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. Reetesh K. Gangwar</h4>
                                                 <p className="text-gray-600 text-sm font-medium">Associate Professor</p>
@@ -82,7 +82,7 @@ export default function AboutPage() {
 
                                             <div className="flex flex-col items-center sm:items-start group">
                                                 <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                                                    <img src="/conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
+                                                    <img src="/Conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Prof. Shihabudheen</h4>
                                                 <p className="text-gray-600 text-sm font-medium">Professor</p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
                                             <div className="flex flex-col items-center sm:items-start group">
                                                 <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                                                    <img src="/conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
+                                                    <img src="/Conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. S. Sunil Kumar</h4>
                                                 <p className="text-gray-600 text-sm font-medium">Associate Professor</p>

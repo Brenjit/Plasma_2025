@@ -209,7 +209,7 @@ export default function Home() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="flex flex-col items-start group">
                       <div className="w-24 h-24 rounded-full overflow-hidden mb-3 shadow-md border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                        <img src="/conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
+                        <img src="/Conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
                       </div>
                       <h4 className="text-sm font-bold text-gray-900 font-display">Dr. Reetesh K. Gangwar</h4>
                       <p className="text-gray-600 text-xs font-medium">Associate Professor</p>
@@ -218,7 +218,7 @@ export default function Home() {
 
                     <div className="flex flex-col items-start group">
                       <div className="w-24 h-24 rounded-full overflow-hidden mb-3 shadow-md border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                        <img src="/conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
+                        <img src="/Conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
                       </div>
                       <h4 className="text-sm font-bold text-gray-900 font-display">Prof. Shihabudheen</h4>
                       <p className="text-gray-600 text-xs font-medium">Professor</p>
@@ -227,7 +227,7 @@ export default function Home() {
 
                     <div className="flex flex-col items-start group">
                       <div className="w-24 h-24 rounded-full overflow-hidden mb-3 shadow-md border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
-                        <img src="/conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
+                        <img src="/Conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
                       </div>
                       <h4 className="text-sm font-bold text-gray-900 font-display">Dr. S. Sunil Kumar</h4>
                       <p className="text-gray-600 text-xs font-medium">Associate Professor</p>
