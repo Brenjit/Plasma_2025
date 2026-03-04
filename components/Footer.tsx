@@ -75,9 +75,11 @@ export default function Footer() {
                     {/* Organized By */}
                     <div>
                         <h3 className="font-bold text-gray-900 mb-6 font-display">Organized By</h3>
-                        <div className="flex flex-wrap gap-4 items-center">
-                            <img src="/logos/iit-tirupati.png" alt="IIT Tirupati" className="h-12 w-auto object-contain bg-white rounded" />
-                            <img src="/logos/iiser-tirupati.png" alt="IISER Tirupati" className="h-12 w-auto object-contain bg-white rounded" />
+                        <div className="grid grid-cols-2 gap-4 items-center">
+                            <img src="/logos/iit-tirupati.png" alt="IIT Tirupati" className="h-16 w-auto object-contain bg-white rounded" />
+                            <img src="/logos/iiser-tirupati.png" alt="IISER Tirupati" className="h-16 w-auto object-contain bg-white rounded" />
+                            <img src="/sponsors/PSSI.png" alt="PSSI" className="h-16 w-auto object-contain bg-white rounded" />
+                            <img src="/sponsors/CAMOST.png" alt="CAMOST" className="h-16 w-auto object-contain bg-white rounded" />
                         </div>
                     </div>
                 </div>

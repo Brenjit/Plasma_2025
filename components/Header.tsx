@@ -22,10 +22,10 @@ export default function Header() {
         <>
             <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md transition-all duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-24">
+                    <div className="flex items-center justify-between h-36">
                         {/* Logo Area */}
                         <Link href="/" className="flex items-center gap-4 group">
-                            <div className="w-20 h-20 rounded-lg bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
+                            <div className="w-32 h-32 rounded-lg bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
                                 <img
                                     src="/images/plasma_logo.jpg"
                                     alt="Plasma 2025 Logo"

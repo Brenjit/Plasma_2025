@@ -125,11 +125,30 @@ export default function ProceedingsPage() {
             <Header />
 
             <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="mb-10 text-center">
+                <div className="mb-10 text-center flex flex-col items-center">
                     <h1 className="text-4xl font-bold text-gray-900 font-display mb-4">Proceedings & Talks Archive</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-600 max-w-2xl mx-auto mb-6">
                         Search and explore the comprehensive record of sessions, presentations, and technical talks from Plasma 2025.
                     </p>
+
+                    {/* Special Issue Banner */}
+                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 max-w-3xl flex flex-col sm:flex-row items-center gap-4 shadow-sm">
+                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+                            <span className="material-symbols-outlined">menu_book</span>
+                        </div>
+                        <div className="text-left flex-1">
+                            <h3 className="text-gray-900 font-bold mb-1">IEEE Transactions on Plasma Science — Special Issue</h3>
+                            <p className="text-sm text-gray-600">The Special Issue on the 40th PSSI National Symposium on Plasma Science and Technology (PLASMA 2025) will be uploaded here.</p>
+                        </div>
+                        <a
+                            href="https://ieeexplore.ieee.org/document/11203838"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-primary-dark transition-colors whitespace-nowrap flex-shrink-0"
+                        >
+                            View on IEEE
+                        </a>
+                    </div>
                 </div>
 
                 {/* Search & Filter Bar */}

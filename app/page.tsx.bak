@@ -54,27 +54,6 @@ function CountUp({ target, suffix = "", duration = 3000, delay = 500 }: { target
 }
 
 export default function Home() {
-  const [sponsorsVisible, setSponsorsVisible] = useState(false);
-  const sponsorsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setSponsorsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sponsorsRef.current) {
-      observer.observe(sponsorsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="relative flex min-h-screen w-full flex-col group/design-root bg-gray-50 text-gray-900 font-sans">
       <Header />
@@ -148,7 +127,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: "Delegates", target: 400, suffix: "+" },
+                { label: "Delegates", target: 500, suffix: "+" },
                 { label: "Keynote Speakers", target: 40, suffix: "+" },
                 { label: "Technical Sessions", target: 100, suffix: "+" },
                 { label: "Sponsors", target: 20, suffix: "+" },
@@ -188,7 +167,7 @@ export default function Home() {
                   Thank You for a Grand Success
                 </h2>
                 <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                  We extend our heartfelt gratitude to the <strong>400+ delegates, 40+ keynote speakers, and 20+ sponsors</strong> who made Plasma 2025 a resounding success.
+                  We extend our heartfelt gratitude to the <strong>500+ delegates, 40+ keynote speakers, and 20+ sponsors</strong> who made Plasma 2025 a resounding success.
                 </p>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   The symposium featured over <strong>100 technical sessions</strong> covering breakthroughs in fusion energy, space plasma, and sustainable technologies, fostering invaluable collaborations for the future.
@@ -238,7 +217,7 @@ export default function Home() {
               </div>
 
               {/* Right: Sponsors tiered showcase */}
-              <div ref={sponsorsRef} className="lg:w-7/12 flex items-center justify-center">
+              <div className="lg:w-7/12 flex items-center justify-center">
                 <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm w-full space-y-6 lg:space-y-8">
                   <h3 className="text-center text-gray-500 font-medium uppercase tracking-widest text-sm mb-2">Our Sponsors</h3>
 
@@ -246,8 +225,8 @@ export default function Home() {
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-3">Title Sponsor</p>
                     <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
-                      <img src="/sponsors/AtosLogofinal_edited.png" alt="ATOS" className={`h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[100ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Ozone_crop.jpeg" alt="OCIPL" className={`h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[200ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
+                      <img src="/sponsors/AtosLogofinal_edited.png" alt="ATOS" className="h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Ozone_crop.jpeg" alt="OCIPL" className="h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-transform" />
                     </div>
                   </div>
 
@@ -257,10 +236,10 @@ export default function Home() {
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-3">Diamond / Platinum</p>
                     <div className="flex flex-wrap justify-center items-center gap-5 lg:gap-8">
-                      <img src="/sponsors/ANRF_Anushandhan.jpeg" alt="ANRF" className={`h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[300ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/BRNS.jpeg" alt="BRNS" className={`h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[400ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Simco high definition.png" alt="SIMCO" className={`h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[500ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/brunker.svg" alt="Bruker" className={`h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[600ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
+                      <img src="/sponsors/ANRF_Anushandhan.jpeg" alt="ANRF" className="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/BRNS.jpeg" alt="BRNS" className="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Simco high definition.png" alt="SIMCO" className="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/brunker.svg" alt="Bruker" className="h-14 sm:h-16 w-auto object-contain hover:scale-105 transition-transform" />
                     </div>
                   </div>
 
@@ -270,10 +249,10 @@ export default function Home() {
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-3">Gold Sponsors</p>
                     <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
-                      <img src="/sponsors/ELTECH LOGO (1).png" alt="Eltech" className={`h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[700ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/PSSI.png" alt="PSSI" className={`h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[800ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/ASPL_FUSION.jpg" alt="ASPL Fusion" className={`h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[900ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Deepam Biotek.png" alt="Deepam Biotek" className={`h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1000ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
+                      <img src="/sponsors/ELTECH LOGO (1).png" alt="Eltech" className="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/PSSI.png" alt="PSSI" className="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/ASPL_FUSION.jpg" alt="ASPL Fusion" className="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform" />
+                      <img src="/sponsors/Deepam Biotek.png" alt="Deepam Biotek" className="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform" />
                     </div>
                   </div>
 
@@ -283,14 +262,14 @@ export default function Home() {
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-3">Silver · Bronze · Others</p>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 justify-items-center items-center">
-                      <img src="/sponsors/swan-scientific-logo.png" alt="Swan Scientific" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1100ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/LASER_Science.png" alt="Laser Science" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1200ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Pfeiffer.png" alt="Pfeiffer" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1300ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/PerkinElmer SWP Full Color.jpg" alt="PerkinElmer" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1400ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/DRDO.png" alt="DRDO" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1500ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/comsol-logo-130x20.png" alt="COMSOL" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1600ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/IOP_publishing.png" alt="IOP Publishing" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1700ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Power Beam Society.png" alt="Power Beam" className={`h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[1800ms] ${sponsorsVisible ? 'opacity-80 hover:opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
+                      <img src="/sponsors/swan-scientific-logo.png" alt="Swan Scientific" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/LASER_Science.png" alt="Laser Science" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/Pfeiffer.png" alt="Pfeiffer" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/PerkinElmer SWP Full Color.jpg" alt="PerkinElmer" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/DRDO.png" alt="DRDO" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/comsol-logo-130x20.png" alt="COMSOL" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/IOP_publishing.png" alt="IOP Publishing" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
+                      <img src="/sponsors/Power Beam Society.png" alt="Power Beam" className="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform opacity-80 group-hover:opacity-100" />
                     </div>
                   </div>
 
@@ -446,7 +425,6 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-display">
                 Media Coverage
               </h2>
-              <div className="mx-auto w-[240px] max-w-[60%] h-[5px] mt-6 bg-primary rounded-full"></div>
             </div>
 
             <div className="flex justify-center">
@@ -454,7 +432,7 @@ export default function Home() {
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/10 rounded-2xl transition-colors pointer-events-none z-10"></div>
 
                 <img
-                  src="/images/News_report.png"
+                  src="/images/_report.png"
                   alt="Plasma 2025 paper Report"
                   className="w-full h-auto object-contain rounded-xl"
                 />

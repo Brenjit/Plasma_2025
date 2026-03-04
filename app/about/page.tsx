@@ -51,14 +51,14 @@ export default function AboutPage() {
                                 <div className="h-1 w-20 bg-gradient-to-r from-secondary to-yellow-400 mb-6 rounded-full"></div>
                                 <p className="text-gray-500 text-sm font-medium uppercase tracking-wider flex items-center gap-2">
                                     <span className="h-px w-4 bg-gray-400"></span>
-                                    From the Chairman
+                                    From the Conveners
                                 </p>
                             </div>
 
                             <div className="w-full md:w-2/3 lg:w-3/4">
                                 <div className="prose prose-lg text-gray-700 leading-relaxed font-light text-lg">
                                     <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left">
-                                        It is with great pride that we reflect on the <strong className="text-primary font-semibold">40th National Symposium on Plasma Science and Technology for Sustainable Future (Plasma 2025)</strong>, the nation’s largest and most distinguished gathering dedicated to the field of plasma science, engineering, and technology. As Chairman of this milestone event, I was delighted to host researchers, industry leaders, innovators, and policymakers from <strong>27–29 December 2025</strong> in IIT Tirupati and IISER Tirupati, for what was a truly transformative experience.
+                                        It is with great pride that we reflect on the <strong className="text-primary font-semibold">40th National Symposium on Plasma Science and Technology for Sustainable Future (Plasma 2025)</strong>, the nation’s largest and most distinguished gathering dedicated to the field of plasma science, engineering, and technology. As Conveners of this milestone event, we were delighted to host researchers, industry leaders, innovators, and policymakers from <strong>27–29 December 2025</strong> in IIT Tirupati and IISER Tirupati, for what was a truly transformative experience.
                                     </p>
                                     <p>
                                         We were joined by over <strong>500 delegates, 40 keynote speakers, and 20 sponsors</strong>, making this a landmark event. Plasma 2025 served as a vital platform to explore developments through a rich program of over <strong>100 technical sessions</strong>, panel discussions, and interactive workshops.
@@ -69,10 +69,34 @@ export default function AboutPage() {
                                     <p>
                                         The local organizing committee extends its heartfelt thanks to all participants for their engagement and insights. We hope you took full advantage of this opportunity to shape the direction of plasma science and its role in building a better, more sustainable world. We look forward to our continued collaboration in the future.
                                     </p>
-                                    <div className="flex items-center gap-4 mt-8 pt-8 border-t border-gray-100">
-                                        {/* Optional Signature Space */}
-                                        <div className="font-handwriting text-2xl text-primary opacity-80 rotate-[-2deg]">
-                                            Plasma 2025 Organizing Committee
+                                    <div className="mt-12 pt-8 border-t border-gray-100">
+                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 opacity-90">
+                                            <div className="flex flex-col items-center sm:items-start group">
+                                                <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
+                                                    <img src="/conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
+                                                </div>
+                                                <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. Reetesh K. Gangwar</h4>
+                                                <p className="text-primary text-sm font-medium">Associate Professor</p>
+                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IIT Tirupati</p>
+                                            </div>
+
+                                            <div className="flex flex-col items-center sm:items-start group">
+                                                <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
+                                                    <img src="/conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
+                                                </div>
+                                                <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Prof. Shihabudheen</h4>
+                                                <p className="text-primary text-sm font-medium">Professor</p>
+                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">CEE, IIT Tirupati</p>
+                                            </div>
+
+                                            <div className="flex flex-col items-center sm:items-start group">
+                                                <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
+                                                    <img src="/conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
+                                                </div>
+                                                <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. S. Sunil Kumar</h4>
+                                                <p className="text-primary text-sm font-medium">Associate Professor</p>
+                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IISER Tirupati</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +143,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* Host 2: IISER Tirupati */}
-                        <div className="flex flex-col lg:flex-row-reverse items-stretch gap-0 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 group border border-gray-100">
+                        <div className="flex flex-col lg:flex-row-reverse items-stretch gap-0 mb-24 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 group border border-gray-100">
                             <div className="w-full lg:w-1/2 relative min-h-[400px]">
                                 <Image
                                     src="/about/iiser_tirupati.jpg"
@@ -142,6 +166,49 @@ export default function AboutPage() {
                                 <p className="text-gray-600 leading-relaxed">
                                     Located in the temple town of Tirupati, Andhra Pradesh, IISER Tirupati offers integrated B.S.-M.S. and Ph.D. programs. The institute is rapidly developing as a hub for high-impact scientific research in molecular biology, quantum physics, nanoscience, atmospheric chemistry, and data science.
                                 </p>
+                            </div>
+                        </div>
+
+                        {/* Host 3: PSSI */}
+                        <div className="flex flex-col lg:flex-row items-stretch gap-0 bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 group border border-gray-100">
+                            <div className="w-full lg:w-1/2 relative min-h-[400px] bg-white flex items-center justify-center p-16 lg:p-24">
+                                <a href="https://www.pssi.in/about_pssi.html" target="_blank" rel="noopener noreferrer" className="relative w-[240px] h-[240px] flex items-center justify-center">
+                                    <Image
+                                        src="/sponsors/PSSI.png"
+                                        alt="PSSI Logo"
+                                        fill
+                                        className="object-contain transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </a>
+                                <div className="absolute bottom-8 left-8 z-20">
+                                    <div className="bg-primary text-white px-4 py-1 inline-block text-sm font-bold rounded mb-2 shadow-sm">Organizing Society</div>
+                                </div>
+                            </div>
+
+                            <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+                                <a href="https://www.pssi.in/about_pssi.html" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors group">
+                                    <h3 className="text-3xl font-bold text-gray-900 font-display mb-3 group-hover:text-primary transition-colors">Plasma Science Society of India</h3>
+                                    <p className="text-sm text-gray-500 font-medium mb-6 uppercase tracking-wider">Registered Office: Physical Research Laboratory, Ahmedabad</p>
+                                </a>
+
+                                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                                    The Plasma Science Society of India (PSSI) is dedicated to promoting and popularizing plasma science and technology across the nation. The society encourages the study of all aspects of plasma science and fosters active interaction among researchers, educational institutions, and industries.
+                                </p>
+                                <p className="text-gray-600 leading-relaxed text-lg mb-8">
+                                    PSSI supports the scientific community by organizing symposiums, workshops, and lectures, and by publishing newsletters and reports. It also strives to include plasma science in university curricula and provides vital support to research students through fellowships and travel grants, ensuring a vibrant future for coordinated research in India.
+                                </p>
+
+                                <div>
+                                    <a
+                                        href="https://www.pssi.in"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 group shadow-sm hover:shadow-md"
+                                    >
+                                        Learn More
+                                        <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

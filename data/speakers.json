@@ -1,9 +1,9 @@
 [
     {
         "id": "1",
-        "name": "Prof. Joydeep Ghosh",
-        "affiliation": "IPR Gandhinagar",
-        "image": "/speakers/Joydeep Ghosh.jpg"
+        "name": "Prof. M. V. Kartikeyan",
+        "affiliation": "IIITDM-Kancheepuram",
+        "image": "/speakers/Kartikeyan.png"
     },
     {
         "id": "2",
@@ -55,9 +55,9 @@
     },
     {
         "id": "10",
-        "name": "Prof. M. V. Kartikeyan",
-        "affiliation": "IIITDM-Kancheepuram",
-        "image": "/speakers/Kartikeyan.png"
+        "name": "Prof. Joydeep Ghosh",
+        "affiliation": "IPR Gandhinagar",
+        "image": "/speakers/Joydeep Ghosh.jpg"
     },
     {
         "id": "11",
