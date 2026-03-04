@@ -76,8 +76,8 @@ export default function AboutPage() {
                                                     <img src="/conveners/Reetesh.png" alt="Dr. Reetesh K. Gangwar" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. Reetesh K. Gangwar</h4>
-                                                <p className="text-primary text-sm font-medium">Associate Professor</p>
-                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IIT Tirupati</p>
+                                                <p className="text-gray-600 text-sm font-medium">Associate Professor</p>
+                                                <p className="text-primary text-xs font-bold uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IIT Tirupati</p>
                                             </div>
 
                                             <div className="flex flex-col items-center sm:items-start group">
@@ -85,8 +85,8 @@ export default function AboutPage() {
                                                     <img src="/conveners/Shihabudhee.png" alt="Prof. Shihabudheen M. Maliyekkal" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Prof. Shihabudheen</h4>
-                                                <p className="text-primary text-sm font-medium">Professor</p>
-                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">CEE, IIT Tirupati</p>
+                                                <p className="text-gray-600 text-sm font-medium">Professor</p>
+                                                <p className="text-primary text-xs font-bold uppercase tracking-wider mt-1 text-center sm:text-left">CEE, IIT Tirupati</p>
                                             </div>
 
                                             <div className="flex flex-col items-center sm:items-start group">
@@ -94,8 +94,8 @@ export default function AboutPage() {
                                                     <img src="/conveners/Sunil.png" alt="Dr. S. Sunil Kumar" className="w-full h-full object-cover object-top" />
                                                 </div>
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Dr. S. Sunil Kumar</h4>
-                                                <p className="text-primary text-sm font-medium">Associate Professor</p>
-                                                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IISER Tirupati</p>
+                                                <p className="text-gray-600 text-sm font-medium">Associate Professor</p>
+                                                <p className="text-primary text-xs font-bold uppercase tracking-wider mt-1 text-center sm:text-left">Physics, IISER Tirupati</p>
                                             </div>
                                         </div>
                                     </div>
