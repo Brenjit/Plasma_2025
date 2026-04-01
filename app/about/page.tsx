@@ -8,7 +8,7 @@ export default function AboutPage() {
         <div className="flex flex-col min-h-screen bg-gray-50 font-sans selection:bg-secondary/20 selection:text-primary">
             <Header />
             <main className="flex-grow">
-                {/* Hero Section - Parallax style */}
+                {/* Hero Section - Parallax ok style */}
                 <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#2a0a0a]">
                     <div className="absolute inset-0 z-0">
                         <Image
