@@ -83,7 +83,7 @@ export default function Header() {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden animate-fade-in">
+                <div className="fixed inset-0 z-40 bg-white pt-40 px-6 pb-6 md:hidden overflow-y-auto animate-fade-in">
                     <nav className="flex flex-col gap-6 text-center">
                         {navLinks.map((link) => (
                             <Link
