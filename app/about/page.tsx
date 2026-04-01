@@ -61,7 +61,7 @@ export default function AboutPage() {
                                         It is with great pride that we reflect on the <strong className="text-primary font-semibold">40th National Symposium on Plasma Science and Technology for Sustainable Future (Plasma 2025)</strong>, the nation’s largest and most distinguished gathering dedicated to the field of plasma science, engineering, and technology. As Conveners of this milestone event, we were delighted to host researchers, industry leaders, innovators, and policymakers from <strong>27–29 December 2025</strong> in IIT Tirupati and IISER Tirupati, for what was a truly transformative experience.
                                     </p>
                                     <p>
-                                        We were joined by over <strong>500 delegates, 40 keynote speakers, and 20 sponsors</strong>, making this a landmark event. Plasma 2025 served as a vital platform to explore developments through a rich program of over <strong>100 technical sessions</strong>, panel discussions, and interactive workshops.
+                                        We were joined by over <strong>400 delegates, 40 keynote speakers, and 20 sponsors</strong>, making this a landmark event. Plasma 2025 served as a vital platform to explore developments through a rich program of over <strong>100 technical sessions</strong>, panel discussions, and interactive workshops.
                                     </p>
                                     <p>
                                         Topics spanned fusion energy, additive manufacturing, plasma diagnostics, surface engineering, and applications in sustainability. With participation from academia, government, and industry, the symposium showcased the latest research and fostered strategic collaborations for the future of plasma-aided technologies.
@@ -210,6 +210,25 @@ export default function AboutPage() {
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* NAC and SAC Section */}
+                <section id="nac-sac" className="py-24 bg-white relative">
+                    <div className="absolute inset-0 opacity-[0.02] bg-[url('/patterns/topography.svg')]"></div>
+                    <div className="container mx-auto px-4 relative z-10">
+                        <div className="text-center mb-16">
+                            <span className="text-secondary font-bold uppercase tracking-widest text-sm border-b border-secondary pb-1">Committees</span>
+                            <h2 className="text-4xl md:text-5xl font-bold mt-4 font-display text-primary">NAC and SAC</h2>
+                            <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent mx-auto mt-6 rounded-full"></div>
+                        </div>
+                        <div className="max-w-5xl mx-auto w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white p-2">
+                            <img
+                                src="/images/NAC_SAC.png"
+                                alt="National Advisory Committee and Scientific Advisory Committee"
+                                className="w-full h-auto rounded-xl"
+                            />
                         </div>
                     </div>
                 </section>

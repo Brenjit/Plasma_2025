@@ -235,6 +235,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                
+                <Link href="/about#nac-sac" className="block mt-8 mb-2">
+                  <button className="group w-fit flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors">
+                    See NAC & SAC
+                    <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                  </button>
+                </Link>
               </div>
 
               {/* Right: Sponsors tiered showcase */}
@@ -247,7 +254,7 @@ export default function Home() {
                     <p className="text-[10px] uppercase tracking-widest text-gray-400 text-center mb-3">Title Sponsor</p>
                     <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
                       <img src="/sponsors/AtosLogofinal_edited.png" alt="ATOS" className={`h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[100ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
-                      <img src="/sponsors/Ozone_crop.jpeg" alt="OCIPL" className={`h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[200ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
+                      <img src="/sponsors/Ozone_crop.jpeg" alt="OCIPL" className={`h-32 sm:h-40 w-auto object-contain hover:scale-105 transition-all duration-700 ease-out delay-[200ms] ${sponsorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} />
                     </div>
                   </div>
 
