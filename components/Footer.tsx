@@ -37,7 +37,7 @@ export default function Footer() {
                                 <Link href="/gallery" className="hover:text-primary transition-colors">Photo Gallery</Link>
                             </li>
                             <li>
-                                <Link href="/#committee" className="hover:text-primary transition-colors">Organizing Committee</Link>
+                                <Link href="/about#volunteers" className="hover:text-primary transition-colors">Organizing Committee</Link>
                             </li>
                             <li>
                                 <Link href="/#contact" className="hover:text-primary transition-colors">Contact Us</Link>
