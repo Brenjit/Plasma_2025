@@ -238,7 +238,7 @@ export default function Home() {
                 
                 <Link href="/about#nac-sac" className="block mt-8 mb-2">
                   <button className="group w-fit flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors">
-                    See NAC & SAC
+                    Click here to see National and Scientific Advisory Committee
                     <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
                   </button>
                 </Link>

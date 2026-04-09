@@ -167,6 +167,22 @@ export default function ProceedingsPage() {
                         <div className="text-left flex-1">
                             <h3 className="text-gray-900 font-bold mb-1">IEEE Transactions on Plasma Science — Special Issue</h3>
                             <p className="text-sm text-gray-600">The Special Issue on the 40th PSSI National Symposium on Plasma Science and Technology (PLASMA 2025) will be uploaded here.</p>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-3">
+                                <p className="text-xs text-primary font-bold flex items-center gap-1">
+                                    <span className="material-symbols-outlined text-sm">event</span>
+                                    Submission Deadline: 30 Apr 2026
+                                </p>
+                                <span className="hidden sm:block text-gray-300">|</span>
+                                <a 
+                                    href="https://ieee.atyponrex.com/journal/tps-ieee" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-xs text-primary font-bold hover:underline flex items-center gap-1"
+                                >
+                                    <span className="material-symbols-outlined text-sm">link</span>
+                                    Submit Manuscript
+                                </a>
+                            </div>
                         </div>
                         <div className="flex flex-col gap-2 flex-shrink-0 w-full sm:w-auto mt-2 sm:mt-0">
                             <a

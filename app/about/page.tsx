@@ -1,4 +1,4 @@
-
+import VolunteerSlider from "@/components/VolunteerSlider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -87,7 +87,7 @@ export default function AboutPage() {
                                                 <h4 className="text-lg font-bold text-gray-900 font-display text-center sm:text-left">Prof. Shihabudheen</h4>
                                                 <p className="text-gray-600 text-sm font-medium">Professor</p>
                                                 <p className="text-primary text-xs font-bold uppercase tracking-wider mt-1 text-center sm:text-left">CEE, IIT Tirupati</p>
-                                            </div>
+                                             </div>
 
                                             <div className="flex flex-col items-center sm:items-start group">
                                                 <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-primary/10 group-hover:border-primary/30 transition-colors">
@@ -220,7 +220,7 @@ export default function AboutPage() {
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="text-center mb-16">
                             <span className="text-secondary font-bold uppercase tracking-widest text-sm border-b border-secondary pb-1">Committees</span>
-                            <h2 className="text-4xl md:text-5xl font-bold mt-4 font-display text-primary">NAC and SAC</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold mt-4 font-display text-primary">National Advisory Committee (NAC) and Scientific Advisory Committee (SAC)</h2>
                             <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent mx-auto mt-6 rounded-full"></div>
                         </div>
                         <div className="max-w-5xl mx-auto w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white p-2">
@@ -229,6 +229,21 @@ export default function AboutPage() {
                                 alt="National Advisory Committee and Scientific Advisory Committee"
                                 className="w-full h-auto rounded-xl"
                             />
+                        </div>
+                    </div>
+                </section>
+
+                {/* Volunteers & Local Committees Slider Section */}
+                <section id="volunteers" className="py-24 bg-gray-50 relative border-t border-gray-100">
+                    <div className="absolute inset-0 opacity-[0.02] bg-[url('/patterns/topography.svg')]"></div>
+                    <div className="container mx-auto px-4 relative z-10">
+                        <div className="text-center mb-16">
+                            <span className="text-secondary font-bold uppercase tracking-widest text-sm border-b border-secondary pb-1">Our Team</span>
+                            <h2 className="text-4xl md:text-5xl font-bold mt-4 font-display text-primary">Local Organizing Committees & Volunteers</h2>
+                            <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent mx-auto mt-6 rounded-full"></div>
+                        </div>
+                        <div className="max-w-7xl mx-auto w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white p-2">
+                            <VolunteerSlider />
                         </div>
                     </div>
                 </section>
